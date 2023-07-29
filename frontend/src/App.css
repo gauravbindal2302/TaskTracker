@@ -1,0 +1,191 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(185, 185, 180);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.col {
+  flex: 1;
+}
+
+.col-1 {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5rem 0 10rem;
+  height: 100%;
+}
+
+.col-1 a {
+  font-size: 22px;
+  line-height: 1.8;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #084d37;
+}
+.col-1 h1 {
+  font-weight: 800;
+}
+
+.col-1 p {
+  line-height: 1.5;
+  font-size: 15px;
+  color: #343333;
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 10rem;
+  flex: 1;
+  height: 100%;
+}
+
+.form {
+  max-width: 320px;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  align-items: center;
+  text-align: center;
+  background: #d9d8d8;
+}
+.form-heading {
+  justify-content: space-between;
+  display: flex;
+  width: 170px;
+  margin: 0 auto;
+}
+.form-heading h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 3;
+}
+#other-state:hover {
+  cursor: pointer;
+}
+#current-state {
+  color: #207d2e;
+  text-decoration: underline;
+}
+.form > input,
+.forgot > input {
+  border-radius: 8px;
+  border: 1px solid #07450a;
+  color: #07450a;
+  margin: 0.5rem 0;
+  padding: 0.6rem 0.75rem;
+  width: 100%;
+  font-size: 0.8rem;
+  outline: none;
+  letter-spacing: 1.2px;
+}
+
+.form > .button {
+  background: #084d37;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.4rem;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 2px solid transparent;
+}
+.form > .button:hover {
+  background: #2d6652;
+  border: 2px solid #07450a;
+}
+.forgot-password button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 8px 0;
+  cursor: pointer;
+  color: rgb(92, 92, 96);
+  margin-bottom: 20px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.forgot-password button:hover {
+  color: rgb(67, 67, 69);
+  text-decoration: underline;
+}
+
+.forgot {
+  margin-top: 15px;
+}
+
+#forgot-label {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+
+@media only screen and (max-width: 996px) {
+  .app {
+    height: 100vh;
+    width: 100vw;
+  }
+  .row {
+    height: 100%;
+    flex-direction: column;
+  }
+  .col {
+    height: auto;
+    width: 100%;
+  }
+  .col-1 {
+    height: auto;
+    padding: 2rem;
+  }
+  .col-1 a {
+    font-size: 16px;
+  }
+  .col-1 p {
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  .col-2 {
+    height: auto;
+    align-items: center;
+    padding: 2rem;
+    margin-top: -7rem;
+  }
+  .form {
+    padding: 1rem;
+  }
+  .form-heading {
+    width: 160px;
+  }
+  .form h1 {
+    font-size: 20px;
+  }
+  .forgot-password button {
+    font-size: 14px;
+  }
+  .forgot {
+    margin-top: 10px;
+  }
+}
