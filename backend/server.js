@@ -16,7 +16,7 @@ const DB = process.env.DATABASE;
 const PORT = process.env.PORT;
 const SECRET_KEY = process.env.KEY;
 
-//MongoDB Connection String
+// Connect to the MongoDB database
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
@@ -131,6 +131,7 @@ server.post("/api/items", async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+
 server.delete("/api/items/:itemId", async (req, res) => {
   try {
     const itemId = req.params.itemId;

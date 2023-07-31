@@ -95,46 +95,49 @@ function Main() {
     const date = new Date();
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    const timeString = `${hours}:${minutes}`;
+    const timeString = `${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
     return timeString;
   };*/
 
   return (
-    <>
-      <div className="main">
-        <div className="main-container">
-          <div className="date-and-time">
-            <h3>
-              {currentDate} {/*- {getCurrentTime()}*/}
-            </h3>
+    <div className="main">
+      <div className="main-container">
+        <div className="date-and-time">
+          <h3>
+            {currentDate}
+            {/* - {getCurrentTime()}*/}
+          </h3>
+        </div>
+        <div className="box">
+          <div className="heading">
+            <h1>Task Tracker</h1>
           </div>
-          <div className="box">
-            <div className="heading">
-              <h1>Task Tracker</h1>
-            </div>
-            <form onSubmit={handleFormSubmit}>
-              <button type="submit">-</button>
-              <input
-                type="name"
-                value={newItem}
-                onChange={(event) => setNewItem(event.target.value)}
-                onKeyDown={handleInputKeyDown}
-                placeholder="New Item"
-                autoComplete="off"
-                required
-              />
-              <button type="submit">+</button>
-            </form>
-            <hr />
-            <ul>
-              {items.map((item) => (
-                <li key={item._id}>{item.name}</li>
-              ))}
-            </ul>
-          </div>
+          <form onSubmit={handleFormSubmit}>
+            <button className="button" type="submit">
+              -
+            </button>
+            <input
+              type="name"
+              value={newItem}
+              onChange={(event) => setNewItem(event.target.value)}
+              onKeyDown={handleInputKeyDown}
+              placeholder="Item Name"
+              autoComplete="off"
+              required
+            />
+            <button className="button" type="submit">
+              +
+            </button>
+          </form>
+          <hr />
+          <ul>
+            {items.map((item) => (
+              <li key={item._id}>{item.name}</li>
+            ))}
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
